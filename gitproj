@@ -1,0 +1,67 @@
+#!/bin/bash
+
+# the purpose of this script is to save you time from creating a new
+# git repo and having to deal with the monotinous tasks of initializing
+# the directory. I decided to solve you problem and have come up with a 
+# solution that will save you time and mon...
+# enough with the sales pitch, just download the script and save some time!
+# CHEEERS!
+
+# Brady Murphy
+# June 8, 2019
+
+# add this script to your bin folder
+# If script is not working, give the script executable right using chmod u+x
+
+# check to see if enough arguments were passed
+if [ "$#" -lt 1 -o "$#" -gt 2 ]; then
+    if [ "$#" -eq 0 ]; then
+        echo "No arguments passed...";
+    else
+        echo "Too many arguments passed..."
+    fi
+    printf "Please use <newgit -help> to guide argument selection\n\n"
+    echo "CRASHING SCRIPT!!!!!"
+    exit 1;
+fi
+
+# check if too many arguments were
+
+# check if help switch was used
+if [ "$1" == "-h" -o "$1" == "--help" ]; then
+    printf "gitproj, version 1.00\n";
+    printf "usage: gitproj [dir-name] [read-me msg]\n\n";
+    printf "This script creates a new git direcotry for you with the ease!\n";
+    printf "The script can be run in two ways:\n"
+    printf "\t1) gitproj <dir-name>:\n"
+    printf "\t\tcreates a new git-dir using the name <dir-name>\n"
+    printf "\t2) gitproj -m <dir-name>:\n"
+    printf "\t\tperforms the same as 1) but will prompt you to add a personalized message to the readme.md\n\n"
+    exit 0;
+fi
+
+# Variables used to the script
+dir_name=
+rm_msg="Welcome to my new project!"
+
+# get dir_name and msg if needed
+if [ "$1" == "-m" ]; then
+    dir_name=$2
+    read -p "Enter read me msg: " rm_msg
+else
+    dir_name=$1
+fi
+
+# main git directory creation
+printf "Creating directory $dir_name...\n"
+mkdir $dir_name                 # create directory
+cd $dir_name                    # move into the directory
+git init
+
+printf "\nCreating readme.md file...\n"
+touch readme.md                 # create readme.md file
+echo $rm_msg >> readme.md       # move message into readme
+
+printf "\nCommitting readme...\n"
+git add .                       # add the contents
+git commit -m "first commit"    # create the first commit
