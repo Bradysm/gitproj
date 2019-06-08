@@ -1,4 +1,5 @@
-# Script created to save peoples lives from dealing with the montinous git directory creation
+# Welcome to GitProj!
+## Script created to save peoples lives from dealing with the montinous git directory creation
 
 ## Please download the script:
 1. <b>move it into your ~/bin directory</b>
