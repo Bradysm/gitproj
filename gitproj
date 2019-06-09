@@ -65,3 +65,36 @@ echo $rm_msg >> readme.md       # move message into readme
 printf "\nCommitting readme...\n"
 git add .                       # add the contents
 git commit -m "first commit"    # create the first commit
+
+# check to see if they want to push it upstream
+prompt="Would you like to push this to a Git repo? [Y/N]"
+ans="N"
+
+# Loop forever until the user enters a valid response (Y/N or Yes/No).
+echo ""
+while true; do
+    read -r -p "$prompt " response
+    case "$response" in
+      [Yy][Ee][Ss]|[Yy]) # Yes or Y (case-insensitive).
+        ans="Y"
+        break
+        ;;
+      [Nn][Oo]|[Nn])  # No or N.
+        break
+        ;;
+      *) # Anything else (including a blank) is invalid.
+        ;;
+    esac
+done
+
+# check to see if they answered yes
+if [ "$ans" == "Y" ]; then
+    read -p "Enter repo's url: " url
+    git remote add origin $url
+    git push -u origin master
+    printf "\nCheck to make sure push worked correctly!\n"
+fi
+
+# goodbye
+_salutation="Thank you for using GitProj!!! Good luck on your project!!!"
+echo $_salutation
