@@ -20,7 +20,7 @@ if [ "$#" -lt 1 -o "$#" -gt 2 ]; then
     else
         echo "Too many arguments passed..."
     fi
-    printf "Please use <gitproj -help> to guide argument selection\n\n"
+    printf "Please use <gitproj —-help> to guide argument selection\n\n"
     echo "CRASHING SCRIPT!!!!!"
     exit 1;
 fi
