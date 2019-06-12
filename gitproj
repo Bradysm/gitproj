@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # the purpose of this script is to save you time from creating a new
-# git repo and having to deal with the monotinous tasks of initializing
+# git repo and having to deal with the monotonous tasks of initializing
 # the directory. I decided to solve you problem and have come up with a 
 # solution that will save you time and mon...
 # enough with the sales pitch, just download the script and save some time!
@@ -20,7 +20,7 @@ if [ "$#" -lt 1 -o "$#" -gt 2 ]; then
     else
         echo "Too many arguments passed..."
     fi
-    printf "Please use <gitproj -help> to guide argument selection\n\n"
+    printf "Please use <gitproj —-help> to guide argument selection\n\n"
     echo "CRASHING SCRIPT!!!!!"
     exit 1;
 fi

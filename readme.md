@@ -1,5 +1,8 @@
 # Welcome to GitProj!
-## Script created to save peoples lives from dealing with the montinous git directory creation
+## Script created to save peoples lives from dealing with the monotonous git directory creation
+
+### This script will create a git directory, readme, and push to your git-repo with ONE command!
+### Personalization is also provided by allowing you to define the readme message, or you can keep it general and stick with the generic message!
 
 ## Please download the script:
 1. <b>move it into your ~/bin directory</b>
