@@ -13,7 +13,7 @@
 # add this script to your bin folder
 # If script is not working, give the script executable right using chmod u+x
 
-# check to see if enough arguments were passed
+# check to see if enough arguments or too many arguments were passed
 if [ "$#" -lt 1 -o "$#" -gt 2 ]; then
     if [ "$#" -eq 0 ]; then
         echo "No arguments passed...";
@@ -24,8 +24,6 @@ if [ "$#" -lt 1 -o "$#" -gt 2 ]; then
     echo "CRASHING SCRIPT!!!!!"
     exit 1;
 fi
-
-# check if too many arguments were
 
 # check if help switch was used
 if [ "$1" == "-h" -o "$1" == "--help" ]; then
@@ -58,11 +56,11 @@ mkdir $dir_name                 # create directory
 cd $dir_name                    # move into the directory
 git init
 
-printf "\nCreating readme.md file...\n"
+printf "Creating readme.md file...\n"
 touch readme.md                 # create readme.md file
 echo $rm_msg >> readme.md       # move message into readme
 
-printf "\nCommitting readme...\n"
+printf "Committing readme...\n"
 git add .                       # add the contents
 git commit -m "first commit"    # create the first commit
 
